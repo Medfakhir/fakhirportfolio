@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^11.18.0",
     "lucide-react": "^0.471.1",
     "next": "15.1.4",
     "react": "^19.0.0",
