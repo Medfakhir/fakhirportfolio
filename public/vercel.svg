@@ -1,1 +1,87 @@
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 150"
+  width="400"
+  height="150"
+  class="cursor-pointer overflow-hidden group"
+>
+  <!-- Background gradient on hover -->
+  <defs>
+    <!-- Gradient for "Mohamed" -->
+    <linearGradient id="gradient-mohamed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ADFF00" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+
+    <!-- Gradient for "Fakhir" -->
+    <linearGradient id="gradient-fakhir" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#ADFF00" />
+    </linearGradient>
+
+    <!-- Gradient for underline -->
+    <linearGradient id="gradient-underline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ADFF00" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+
+    <!-- Blurred background gradient on hover -->
+    <filter id="blur-effect" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Blurred background (visible on hover) -->
+  <rect
+    x="0"
+    y="0"
+    width="100%"
+    height="100%"
+    fill="url(#gradient-underline)"
+    opacity="0"
+    class="group-hover:opacity-100 transition-opacity duration-300"
+    filter="url(#blur-effect)"
+  />
+
+  <!-- Text container -->
+  <g class="group">
+    <!-- "Mohamed" -->
+    <text
+      x="0"
+      y="50"
+      font-size="32"
+      font-weight="300"
+      fill="url(#gradient-mohamed)"
+      class="transition-transform duration-300 group-hover:translate-x-2"
+    >
+      Mohamed
+    </text>
+
+    <!-- "Fakhir" -->
+    <text
+      x="0"
+      y="90"
+      font-size="48"
+      font-weight="bold"
+      fill="url(#gradient-fakhir)"
+      class="transition-transform duration-300 group-hover:-translate-x-2"
+    >
+      Fakhir
+    </text>
+
+    <!-- Underline -->
+    <line
+      x1="0"
+      y1="100"
+      x2="0"
+      y2="100"
+      stroke="url(#gradient-underline)"
+      stroke-width="2"
+      class="transition-all duration-300 group-hover:w-full"
+    />
+  </g>
+</svg>
