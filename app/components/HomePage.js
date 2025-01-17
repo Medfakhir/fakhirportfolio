@@ -1,9 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { Send, Building2, Calendar, Briefcase,Cpu, Globe, Server } from "lucide-react";
-
-
+import { Send, Building2, Calendar, Briefcase, Cpu, Globe, Server } from "lucide-react";
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +70,7 @@ const Portfolio = () => {
         demo: "https://cinezonee.vercel.app",
         github: "https://github.com/Medfakhir/cinezone",
         category: "Full Stack",
-        technologies: ["React", "Prisma", "MongoDB","tailwindcss"],
+        technologies: ["React", "Prisma", "MongoDB", "tailwindcss"],
         color: "from-purple-500 to-blue-500",
       },
       {
@@ -94,7 +92,7 @@ const Portfolio = () => {
         demo: "https://quickpick25.vercel.app/",
         github: "https://github.com/Medfakhir/QuickPick",
         category: "E-commerce",
-        technologies: ["Nextjs", "Mongodb", "Prisma","tailwindcss"],
+        technologies: ["Nextjs", "Mongodb", "Prisma", "tailwindcss"],
         color: "from-rose-500 to-pink-500",
       },
       {
@@ -105,7 +103,7 @@ const Portfolio = () => {
         demo: "https://ai-image-pro-ochre.vercel.app/",
         github: "https://github.com/Medfakhir/AI-Image-Pro",
         category: "AI",
-        technologies: ["Nextjs", "superBase", "Restapi","tailwindcss"],
+        technologies: ["Nextjs", "superBase", "Restapi", "tailwindcss"],
         color: "from-amber-500 to-orange-500",
       },
       {
@@ -261,7 +259,7 @@ const Portfolio = () => {
   const SkillsSection = () => {
     const controls = useAnimation();
     const [hoveredSkill, setHoveredSkill] = useState(null);
-  
+
     const skills = [
       {
         category: "Frontend",
@@ -293,7 +291,7 @@ const Portfolio = () => {
         ],
       },
     ];
-  
+
     const sectionVariants = {
       hidden: { opacity: 0, y: 20 },
       visible: {
@@ -301,27 +299,27 @@ const Portfolio = () => {
         y: 0,
         transition: {
           duration: 0.6,
-          staggerChildren: 0.2
-        }
-      }
+          staggerChildren: 0.2,
+        },
+      },
     };
-  
+
     const cardVariants = {
       hidden: { opacity: 0, y: 20 },
-      visible: { opacity: 1, y: 0 }
+      visible: { opacity: 1, y: 0 },
     };
-  
+
     useEffect(() => {
       const handleScroll = () => {
         if (window.scrollY > document.getElementById("skills").offsetTop - window.innerHeight / 2) {
           controls.start("visible");
         }
       };
-  
+
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }, [controls]);
-  
+
     return (
       <motion.section
         id="skills"
@@ -331,10 +329,7 @@ const Portfolio = () => {
         animate={controls}
       >
         <div className="container mx-auto px-4">
-          <motion.div 
-            className="text-center mb-16"
-            variants={cardVariants}
-          >
+          <motion.div className="text-center mb-16" variants={cardVariants}>
             <h2 className="text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#ADFF00] to-white bg-clip-text text-transparent">
                 My Skills
@@ -342,23 +337,17 @@ const Portfolio = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#ADFF00] to-transparent mx-auto" />
           </motion.div>
-  
+
           <div className="space-y-16">
             {skills.map((category) => (
-              <motion.div 
-                key={category.category}
-                variants={cardVariants}
-                className="relative"
-              >
+              <motion.div key={category.category} variants={cardVariants} className="relative">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="p-2 rounded-lg bg-[#ADFF00]/10 text-[#ADFF00]">
                     {category.icon}
                   </div>
-                  <h3 className="text-3xl font-bold text-white">
-                    {category.category}
-                  </h3>
+                  <h3 className="text-3xl font-bold text-white">{category.category}</h3>
                 </div>
-  
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {category.skills.map((skill) => (
                     <motion.div
@@ -373,7 +362,7 @@ const Portfolio = () => {
                           <span className="text-lg font-semibold text-white">{skill.name}</span>
                           <span className="text-[#ADFF00] font-mono">{skill.level}%</span>
                         </div>
-  
+
                         <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                           <motion.div
                             className="h-full bg-gradient-to-r from-[#ADFF00] to-[#7FB300] rounded-full"
@@ -383,7 +372,7 @@ const Portfolio = () => {
                           />
                         </div>
                       </div>
-  
+
                       <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-[#ADFF00]/50 transition-colors duration-300" />
                     </motion.div>
                   ))}
@@ -398,7 +387,7 @@ const Portfolio = () => {
 
   const ExperienceSection = () => {
     const controls = useAnimation();
-  
+
     const experiences = [
       {
         id: 1,
@@ -422,38 +411,38 @@ const Portfolio = () => {
         company: "HADAIK EL YASSAMIN, MARRAKECH",
       },
     ];
-  
+
     useEffect(() => {
       const handleScroll = () => {
         if (window.scrollY > document.getElementById("experience").offsetTop - window.innerHeight / 2) {
           controls.start("visible");
         }
       };
-  
+
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }, [controls]);
-  
+
     const sectionVariants = {
       hidden: { opacity: 0, y: 20 },
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6 }
-      }
+        transition: { duration: 0.6 },
+      },
     };
-  
+
     const lineVariants = {
       hidden: { scaleY: 0, originY: 0 },
-      visible: { 
+      visible: {
         scaleY: 1,
-        transition: { 
+        transition: {
           duration: 1.5,
-          ease: "easeInOut"
-        }
-      }
+          ease: "easeInOut",
+        },
+      },
     };
-  
+
     return (
       <motion.section
         id="experience"
@@ -474,7 +463,7 @@ const Portfolio = () => {
               <p className="text-gray-400 mt-4">My journey in the tech industry</p>
             </div>
           </div>
-  
+
           <div className="relative max-w-4xl mx-auto">
             {/* Timeline content */}
             <div className="space-y-12">
@@ -491,17 +480,17 @@ const Portfolio = () => {
                         <Calendar size={16} className="text-[#ADFF00]" />
                         <span className="text-sm">{experience.date}</span>
                       </div>
-  
+
                       <div className="flex items-center gap-2 mb-4">
                         <Building2 size={16} className="text-[#ADFF00]" />
                         <h4 className="text-white font-medium">{experience.company}</h4>
                       </div>
-  
+
                       <div className="flex items-start gap-2 mb-4">
                         <Briefcase size={16} className="text-[#ADFF00] mt-1" />
                         <p className="text-gray-300">{experience.mission}</p>
                       </div>
-  
+
                       <div className="flex flex-wrap gap-2 mt-4">
                         {experience.technologies.map((tech, techIndex) => (
                           <span
@@ -517,27 +506,27 @@ const Portfolio = () => {
                 </div>
               ))}
             </div>
-  
+
             {/* Timeline line (now in front of cards) */}
-            <motion.div 
+            <motion.div
               className="absolute left-0 md:left-1/2 top-0 transform md:-translate-x-1/2 h-full w-px bg-gradient-to-b from-[#ADFF00] to-transparent"
-              style={{ 
+              style={{
                 transformOrigin: "top",
-                zIndex: 20 
+                zIndex: 20,
               }}
               variants={lineVariants}
               initial="hidden"
               animate={controls}
             />
-  
+
             {/* Timeline nodes (in front of line) */}
             {experiences.map((_, index) => (
               <div
                 key={index}
                 className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-black border-2 border-[#ADFF00] rounded-full flex items-center justify-center"
-                style={{ 
+                style={{
                   top: `${index * 224}px`,
-                  zIndex: 30
+                  zIndex: 30,
                 }}
               />
             ))}
@@ -550,58 +539,58 @@ const Portfolio = () => {
   const ContactSection = () => {
     const controls = useAnimation();
     const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      message: ''
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
     });
     const [submitted, setSubmitted] = useState(false); // Track form submission
-  
+
     useEffect(() => {
       const handleScroll = () => {
         if (window.scrollY > document.getElementById("contact").offsetTop - window.innerHeight / 2) {
           controls.start("visible");
         }
       };
-  
+
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }, [controls]);
-  
+
     const handleChange = (e) => {
       const { name, value } = e.target;
       setFormData({
         ...formData,
-        [name]: value
+        [name]: value,
       });
     };
-  
+
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
+
       // Replace with your Formspree endpoint
-      const formspreeEndpoint = 'https://formspree.io/f/mpwwezez';
-  
+      const formspreeEndpoint = "https://formspree.io/f/mpwwezez";
+
       try {
         const response = await fetch(formspreeEndpoint, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
         });
-  
+
         if (response.ok) {
           setSubmitted(true); // Show success message
-          setFormData({ firstName: '', lastName: '', email: '', message: '' }); // Clear form
+          setFormData({ firstName: "", lastName: "", email: "", message: "" }); // Clear form
         } else {
-          console.error('Form submission failed');
+          console.error("Form submission failed");
         }
       } catch (error) {
-        console.error('Error submitting form:', error);
+        console.error("Error submitting form:", error);
       }
     };
-  
+
     return (
       <motion.section
         id="contact"
@@ -622,7 +611,7 @@ const Portfolio = () => {
               <p className="text-gray-400 mt-4">Got a project in mind? Let's discuss how we can help!</p>
             </div>
           </div>
-  
+
           <div className="max-w-3xl mx-auto">
             <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-[#ADFF00] transition-all duration-500">
               {submitted ? (
@@ -657,7 +646,7 @@ const Portfolio = () => {
                       />
                     </div>
                   </div>
-  
+
                   <div className="space-y-2">
                     <label className="text-sm text-gray-400 ml-1">Email</label>
                     <input
@@ -670,7 +659,7 @@ const Portfolio = () => {
                       required
                     />
                   </div>
-  
+
                   <div className="space-y-2">
                     <label className="text-sm text-gray-400 ml-1">Message</label>
                     <textarea
@@ -683,7 +672,7 @@ const Portfolio = () => {
                       required
                     />
                   </div>
-  
+
                   <button
                     type="submit"
                     className="w-full bg-[#ADFF00] text-black p-4 rounded-xl font-medium hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-[#ADFF00]/20 flex items-center justify-center gap-2 group"
@@ -694,7 +683,7 @@ const Portfolio = () => {
                 </form>
               )}
             </div>
-  
+
             <div className="mt-12 text-center">
               <p className="text-gray-400">
                 Or reach out directly via email at{" "}
@@ -793,103 +782,102 @@ const Portfolio = () => {
       <main className="pt-20">
         <section className="container mx-auto px-4 pt-16 pb-32 relative">
           <div className="text-center mb-16 md:mb-32 relative">
-  {/* Background Glow Effect */}
-  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#ADFF00] opacity-10 blur-[50px] md:blur-[100px] rounded-full animate-glow" />
+            {/* Background Glow Effect */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#ADFF00] opacity-10 blur-[50px] md:blur-[100px] rounded-full animate-glow" />
 
-  {/* Profile Image Container */}
-  <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 md:mb-12 animate-float">
-    {/* Spotlight Gradient */}
-    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-[#ADFF00] to-transparent opacity-20 animate-spotlight" />
+            {/* Profile Image Container */}
+            <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 md:mb-12 animate-float">
+              {/* Spotlight Gradient */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-[#ADFF00] to-transparent opacity-20 animate-spotlight" />
 
-    {/* Profile Image */}
-    <div className="relative w-full h-full rounded-full overflow-hidden">
-      <img
-        src="/profile.png"
-        alt="Profile"
-        className="w-full h-full object-cover rounded-full"
-      />
-      {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-    </div>
+              {/* Profile Image */}
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <img
+                  src="/profile.png"
+                  alt="Profile"
+                  className="w-full h-full object-cover rounded-full"
+                />
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
 
-    {/* Decorative Dots */}
-    <div className="absolute -right-2 -top-2 w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#ADFF00] blur-[1px] md:blur-[2px] animate-glow" />
-    <div className="absolute -left-1 -bottom-1 w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#ADFF00] blur-[1px] animate-glow" />
-  </div>
+              {/* Decorative Dots */}
+              <div className="absolute -right-2 -top-2 w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#ADFF00] blur-[1px] md:blur-[2px] animate-glow" />
+              <div className="absolute -left-1 -bottom-1 w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#ADFF00] blur-[1px] animate-glow" />
+            </div>
 
-  {/* Text Content */}
-  <div className="space-y-4 md:space-y-6 animate-fade-in">
-    <div className="relative inline-block">
-      <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent animate-typing">
-        Hey, I'm Mohamed Fakhir Fakhir.
-      </h1>
-    </div>
+            {/* Text Content */}
+            <div className="space-y-4 md:space-y-6 animate-fade-in">
+              <div className="relative inline-block">
+                <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent animate-typing">
+                  Hey, I'm Mohamed Fakhir.
+                </h1>
+              </div>
 
-    <p
-      className="text-xl md:text-2xl text-gray-400 opacity-0 animate-fade-in"
-      style={{ animationDelay: "3.5s", animationFillMode: "forwards" }}
-    >
-      Full Stack Developer
-    </p>
+              <p
+                className="text-xl md:text-2xl text-gray-400 opacity-0 animate-fade-in"
+                style={{ animationDelay: "3.5s", animationFillMode: "forwards" }}
+              >
+                Full Stack Developer
+              </p>
 
-    <button
-      className="bg-[#ADFF00] text-black px-6 py-2 md:px-8 md:py-3 rounded-full font-medium opacity-0 animate-fade-in hover:shadow-[0_0_20px_rgba(173,255,0,0.3)] transition-shadow"
-      style={{ animationDelay: "4s", animationFillMode: "forwards" }}
-    >
-      Available for Work
-    </button>
-  </div>
-</div>
+              <button
+                className="bg-[#ADFF00] text-black px-6 py-2 md:px-8 md:py-3 rounded-full font-medium opacity-0 animate-fade-in hover:shadow-[0_0_20px_rgba(173,255,0,0.3)] transition-shadow"
+                style={{ animationDelay: "4s", animationFillMode: "forwards" }}
+              >
+                Available for Work
+              </button>
+            </div>
+          </div>
 
-{/* Navigation Cards */}
-<div className="flex flex-col md:flex-row justify-between max-w-4xl mx-auto relative gap-4 md:gap-0">
-  {/* Animated Line (Hidden on Mobile) */}
-  <div className="hidden md:block absolute top-1/2 left-0 w-full h-24 -mt-12 z-0">
-    <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M 0,50 Q 400,100 800,50"
-        stroke="#ADFF00"
-        strokeWidth="2"
-        fill="none"
-        className="opacity-20"
-      />
-      <path
-        d="M 0,50 Q 400,100 800,50"
-        stroke="#ADFF00"
-        strokeWidth="3"
-        fill="none"
-        className="animate-flow"
-        filter="url(#glow)"
-      />
-      <defs>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="2" result="blur" />
-          <feFlood floodColor="#ADFF00" floodOpacity="0.5" />
-          <feComposite in2="blur" operator="in" />
-          <feComposite in="SourceGraphic" />
-        </filter>
-      </defs>
-    </svg>
-  </div>
+          {/* Navigation Cards */}
+          <div className="flex flex-col md:flex-row justify-between max-w-4xl mx-auto relative gap-4 md:gap-0">
+            {/* Animated Line (Hidden on Mobile) */}
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-24 -mt-12 z-0">
+              <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M 0,50 Q 400,100 800,50"
+                  stroke="#ADFF00"
+                  strokeWidth="2"
+                  fill="none"
+                  className="opacity-20"
+                />
+                <path
+                  d="M 0,50 Q 400,100 800,50"
+                  stroke="#ADFF00"
+                  strokeWidth="3"
+                  fill="none"
+                  className="animate-flow"
+                  filter="url(#glow)"
+                />
+                <defs>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="2" result="blur" />
+                    <feFlood floodColor="#ADFF00" floodOpacity="0.5" />
+                    <feComposite in2="blur" operator="in" />
+                    <feComposite in="SourceGraphic" />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
 
-  {/* Navigation Cards */}
-  {navigationItems.map((item, index) => (
-    <div
-      key={item.id}
-      className="relative z-10 bg-[#0A0A0A] p-4 md:p-6 rounded-lg w-full md:w-64 hover:bg-gray-800 transition-all duration-300 cursor-pointer border border-gray-800 hover:border-[#ADFF00] group"
-    >
-      {/* Glowing Dot */}
-      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 bg-[#ADFF00] rounded-full shadow-[0_0_10px_#ADFF00]" />
+            {/* Navigation Cards */}
+            {navigationItems.map((item, index) => (
+              <div
+                key={item.id}
+                className="relative z-10 bg-[#0A0A0A] p-4 md:p-6 rounded-lg w-full md:w-64 hover:bg-gray-800 transition-all duration-300 cursor-pointer border border-gray-800 hover:border-[#ADFF00] group"
+              >
+                {/* Glowing Dot */}
+                <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-3 h-3 md:w-4 md:h-4 bg-[#ADFF00] rounded-full shadow-[0_0_10px_#ADFF00]" />
 
-      {/* Card Content */}
-      <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-[#ADFF00] transition-colors">
-        {item.title}
-      </h3>
-      <p className="text-sm md:text-base text-gray-400">{item.subtitle}</p>
-    </div>
-  ))}
-</div>
-     
+                {/* Card Content */}
+                <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-[#ADFF00] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-sm md:text-base text-gray-400">{item.subtitle}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <WorkSection />
@@ -1021,7 +1009,7 @@ const Portfolio = () => {
                 </a>
               </div>
 
-              <div className="text-sm text-gray-400">© 2024 Med Fakhir Fakhir. All rights reserved.</div>
+              <div className="text-sm text-gray-400">© 2025 Med Fakhir Fakhir. All rights reserved.</div>
             </div>
           </div>
         </footer>
